@@ -1,6 +1,6 @@
-# Crop Prediction System
+# Crop Recommendation System
 
-This is a web application built with Django that predicts the most suitable crop based on various environmental factors such as Nitrogen, Phosphorus, Potassium, temperature, humidity, pH, and rainfall. Farmers can input these parameters, and the system will provide a recommendation for the best crop to cultivate.
+This is a web application built with Django that recommend the most suitable crop based on various environmental factors such as Nitrogen, Phosphorus, Potassium, temperature, humidity, pH, and rainfall. Farmers can input these parameters, and the system will provide a recommendation for the best crop to cultivate.
 
 ## Features
 
