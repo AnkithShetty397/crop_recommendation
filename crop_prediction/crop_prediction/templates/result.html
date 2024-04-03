@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            background-image: url('{% static "background.jpg" %}');
+            background-size: cover; 
+            background-repeat: no-repeat; 
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .result-container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-container">
+    <h2>Recommendation Result:</h2>
+    <p>{{ prediction }} is a best crop to be cultivated </p>
+</div>
+
+</body>
+</html>

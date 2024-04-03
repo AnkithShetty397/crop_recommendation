@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-image: url('{% static "background.jpg" %}');
+            background-size: cover; 
+            background-repeat: no-repeat; 
+        }
+
+        .heading-container {
+            backdrop-filter: blur(10px); 
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .heading-container h1 {
+            color: #007bff; 
+            text-align: center;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="heading-container">
+    <h1>Crop Recommendation Form</h1>
+</div>
+
+<form method="post" action="{% url 'predict' %}">
+    {% csrf_token %}
+    <label for="N">N (Nitrogen) in kg/ha:</label>
+    <input type="text" name="N" placeholder="Enter Nitrogen value">
+    <label for="P">P (Phosphorus) in kg/ha:</label>
+    <input type="text" name="P" placeholder="Enter Phosphorus value">
+    <label for="k">K (Potassium) in kg/ha:</label>
+    <input type="text" name="k" placeholder="Enter Potassium value">
+    <label for="temperature">Temperature (°C):</label>
+    <input type="text" name="temperature" placeholder="Enter Temperature">
+    <label for="humidity">Humidity (%):</label>
+    <input type="text" name="humidity" placeholder="Enter Humidity">
+    <label for="ph">pH:</label>
+    <input type="text" name="ph" placeholder="Enter pH value">
+    <label for="rainfall">Rainfall (mm):</label>
+    <input type="text" name="rainfall" placeholder="Enter Rainfall">
+    <input type="submit" value="Recommend Crop">
+</form>
+
+</body>
+</html>
