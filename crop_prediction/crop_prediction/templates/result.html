@@ -18,6 +18,7 @@
         h2 {
             text-align: center;
             color: #007bff;
+            text-decoration: underline;
         }
 
         .result-container {
@@ -30,17 +31,42 @@
         }
 
         p {
-            text-align: center;
-            font-size: 18px;
+            text-align: justify;
+            font-size: 16px;
             color: #333;
+            margin-bottom: 20px;
+        }
+
+        .description-box {
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
+<a href="javascript:history.back()" class="back-button">Back</a>
+
 <div class="result-container">
-    <h2>Recommendation Result:</h2>
-    <p>{{ prediction }} is a best crop to be cultivated </p>
+    <h2>Recommendation Result</h2>
+    <p>{{ prediction }} is the recommended crop for cultivation.</p>
+    <p>Crop Description:</p>
+    <div class="description-box">
+        <p>{{ description }}</p>
+    </div>
 </div>
 
 </body>
